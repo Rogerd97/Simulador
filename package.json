@@ -1,0 +1,29 @@
+{
+  "name": "react-app",
+  "version": "1.0.0",
+  "description": "React and JSX example starter project",
+  "homepage": "https://Rogerd97.github.io/Actualizado",
+  "main": "src/index.jsx",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build -f",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
+}
