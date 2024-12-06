@@ -2,7 +2,7 @@
   "name": "react-app",
   "version": "1.0.0",
   "description": "React and JSX example starter project",
-  "homepage": "https://Rogerd97.github.io/Actualizado",
+  "homepage": "https://Rogerd97.github.io/Simulador",
   "main": "src/index.jsx",
   "dependencies": {
     "react": "^18.2.0",
