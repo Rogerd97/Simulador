@@ -1,0 +1,39 @@
+name: Deploy React App to GitHub Pages
+
+# El flujo de trabajo se ejecuta cuando haces un push a la rama `main`.
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Paso 1: Checkout el código del repositorio
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Paso 2: Configurar Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16" # Puedes ajustar la versión de Node.js según lo necesario
+
+      # Paso 3: Instalar las dependencias
+      - name: Install dependencies
+        run: npm install
+
+      # Paso 4: Construir el proyecto (esto genera los archivos para producción)
+      - name: Build the project
+        run: npm run build
+
+      # Paso 5: Desplegar en GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build # Publica el contenido generado en la carpeta `build`
